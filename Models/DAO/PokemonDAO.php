@@ -1,26 +1,30 @@
 <?php
 
-interface PokemonDAO {
-    public function fetch($id);
-    public function fetchAll();
-    public function insert(Pokemon $pokemon);
-    public function delete($id);
-}
+class PokemonDAO extends DAO {
+// Appelle le constructeur de la classe parent avec le nom de la table "pokemon"
+    public function __construct() {
+        parent::__construct("pokemon");
+    }
 
-class PokemonDAOImpl implements PokemonDAO {
-    public function fetch($id) {
-        // Logique pour récupérer un Pokémon par son ID depuis la base de données
+    public function update($pokemon) {
+        $statement = $this->db->prepare("UPDATE pokemon SET name = ?, url = ? WHERE id = ?");
+        return parent::insert($statement, [$pokemon->name, $pokemon->url, $pokemon->id], $pokemon);
     }
-    
-    public function fetchAll() {
-        // Logique pour récupérer tous les Pokémon depuis la base de données
+
+    public function store($pokemon) {
+        $statement = $this->db->prepare("INSERT INTO pokemon (name, url) VALUES (?, ?)");
+        return parent::insert($statement, [$pokemon->name, $pokemon->url], $pokemon);
+    // Utilise la méthode insert  la classe parent pour exécuter la requête avec les valeurs fournies et retourner l'objet Pokémon créé
     }
-    
-    public function insert(Pokemon $pokemon) {
-        // Logique pour insérer un nouveau Pokémon dans la base de données
-    }
-    
-    public function delete($id) {
-        // Logique pour supprimer un Pokémon de la base de données
+
+    public function create($data) {
+        if (empty($data["id"])) {
+            return false;
+        }
+        return new Pokemon(
+            $data["id"] ?? false,
+            $data["name"] ?? false,
+            $data["url"] ?? false
+        );
     }
 }
