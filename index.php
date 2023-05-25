@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pokédex</title>
+    <title>Pokékouille</title>
     <style>
     </style>
     <link rel="stylesheet" href="index.css">
@@ -11,25 +11,33 @@
 </head>
 <body>
 <h1>Pokédex</h1>
-<p>Pikachu</p>
+
     <div class="search-bar">
         <input type="text" id="search-input" placeholder="Rechercher un Pokémon">
         <button type="submit" class="search-button">Rechercher</button>
     </div>
-    <div class="error-message"></div>
-
-    <div class="pokemon-card">
-        <div class="sprite">
-            <img src="" alt=" ">
-        </div>
-        <div class="id"></div>
-        <div class="name"></div>
-        <div class="type"></div>
-        <button class="favorite-button"></button>
-    </div>
     <div class="btnindex">
         <button class="btn1">Liste des Favoris</button>
     </div>
+    <div class="error-message"></div>
+
+    <div id="pokemon-container" class="hidden">
+        <div class="pokemon-card">
+            <div class="sprite">
+                <img src="" alt="">
+            </div>
+            <div class="id"></div>
+            <div class="name"></div>
+            <div class="type"></div>
+            <button class="favorite-button"></button>
+        </div>
+    </div>
+
+
+    <p>Pikachu</p>
+<p>Butterfree</p>
+
+
 
     
 </body>

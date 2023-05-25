@@ -1,5 +1,5 @@
 <?php
-
+//pas touvcher
 interface EntityInterface {
     public function __get($attr);
     public function __set($attr, $value);

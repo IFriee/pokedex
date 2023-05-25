@@ -19,8 +19,11 @@ h1 {
 .error-message {
   color: red;
   margin-top: 10px;
+  text-align: center;
 }
-
+.hidden {
+  display: none;
+}
 
 .search-bar {
   display: flex;
@@ -73,7 +76,7 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  background-image: url('img/favoritebtn.png'); /* Remplacez par le chemin vers l'icône d'étoile */
+  background-image: url('favoritebtn.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
