@@ -16,11 +16,15 @@
         <input type="text" id="search-input" placeholder="Rechercher un Pokémon">
         <button type="submit" class="search-button">Rechercher</button>
     </div>
+
+
     <div class="btnindex">
         <button class="btn1">Liste des Favoris</button>
     </div>
+
     <div class="error-message"></div>
 
+    
     <div id="pokemon-container" class="hidden">
         <div class="pokemon-card">
             <div class="sprite">
@@ -32,7 +36,8 @@
             <button class="favorite-button"></button>
         </div>
     </div>
-
+    
+    <div id="pokemonlist"></div>
 
     <p>Pikachu</p>
 <p>Butterfree</p>

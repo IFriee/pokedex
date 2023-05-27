@@ -16,6 +16,9 @@ class PokemonDAO extends DAO {
         return parent::insert($statement, [$pokemon->name, $pokemon->url, $pokemon->type], $pokemon);
     }
     
+
+
+    
     
     public function create ($data) {
         if (empty($data["id"])) {

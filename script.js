@@ -70,16 +70,80 @@ $(document).ready(function() {
 
   // Fonction pour ajouter un Pokémon aux favoris
   $(document).on('click', '.favorite-button', function() {
+    //var pokemonList = $('#pokemonlist');
     var name = $('.name').text();
     var url = $('.sprite img').attr('src');
     var type = $('.type').text();
 
     $.post('http://localhost/ifosup/Dev-SGBD/Dev-SGBD/pokedex/pokedex/Pokemonfav.php?store=1', { name: name, url: url, type: type })
       .done(function(result) {
-        $('.pokemon-card').append(result);
+        //pokemonList.append(result);
+
       })
       .fail(function(err) {
         console.warn('Error:', err);
       });
   });
+
+
+
 });
+
+  // afficher liste favoris
+  $(document).on('click', '.btn1', function() {
+    var pokemonList = $('#pokemonlist');
+    
+    // Si la liste des favoris est déjà affichée, la cacher
+    if (pokemonList.children().length > 0) {
+      pokemonList.empty();
+      return;
+    }
+    
+    $.get('http://localhost/ifosup/Dev-SGBD/Dev-SGBD/pokedex/pokedex/Pokemonfav.php')
+      .done(function(result) {
+        pokemonList.append(result);
+        var cssLink = $('<link rel="stylesheet" href="index.css">');
+        $('head').append(cssLink);
+      })
+      .fail(function(err) {
+        console.warn('Error:', err);
+      });
+  });
+   
+
+
+/*
+  $(document).on('click', '.unfavorite-button', function() {
+    var pokemonCard = $(this).closest('.pokemon-card2');
+    var pokemonId = pokemonCard.find('.id').text();
+
+    $.ajax({
+      url: 'http://localhost/ifosup/Dev-SGBD/Dev-SGBD/pokedex/pokedex/Pokemonfav.php?destroy=1',
+      type: 'POST',
+      data: { id: pokemonId },
+      success: function(result) {
+          console.log('Pokemon deleted successfully');
+          pokemonCard.remove();
+      },
+      error: function(err) {
+          console.warn('Error:', err);
+      }
+  });
+  
+  
+});
+*/
+
+$(document).on('click', '.unfavorite-button', function() {
+  var pokemonCard = $(this).closest('.pokemon-card2');
+  var pokemonId = pokemonCard.find('.id').text();
+
+  $.post('http://localhost/ifosup/Dev-SGBD/Dev-SGBD/pokedex/pokedex/Pokemonfav.php?destroy=1',{id: pokemonId })
+    .done(function(result) {
+      //pokemonList.append(result);
+      pokemonCard.remove();
+    })
+    .fail(function(err) {
+      console.warn('Error:', err);
+    })
+    });

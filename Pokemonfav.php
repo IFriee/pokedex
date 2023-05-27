@@ -9,7 +9,7 @@ if(!empty($_GET["destroy"])) {
     $controller->update($_POST);
 } else if(!empty($_GET["edit"])) {
     $controller->edit($_GET["edit"]);
-} else if (!empty($_GET["store"])) {
+}else if (!empty($_GET["store"])) {
     $controller->store($_POST);
 } else if (!empty($_GET["id"])) {
     $controller->show($_GET["id"]);
