@@ -42,7 +42,6 @@ class PokemonController {
     
     public function destroy ($id) {
         $pokemon = Pokemon::find($id);
-        $pokemon->remove('pokemon');
         $pokemon->delete();
     }
 }

@@ -6,9 +6,9 @@
         <div class="sprite">
             <img src="<?= $pokemon->url ?>" alt="">
         </div>
-        <div class="id"><?= $pokemon->id ?></div>
-        <div class="name"><?= $pokemon->name ?></div>
-        <div class="type"><?= $pokemon->type ?></div>
+        <div class="idfav"><?= $pokemon->id ?></div>
+        <div class="namefav"><?= $pokemon->name ?></div>
+        <div class="typefav"><?= $pokemon->type ?></div>
         <button class="unfavorite-button"></button>
     </div>
     <?php endforeach; ?>
