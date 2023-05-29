@@ -16,6 +16,14 @@ h1 {
   margin-bottom: 20px;
 }
 
+.titre2 {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
 .error-message {
   color: red;
   margin-top: 10px;
@@ -54,7 +62,9 @@ h1 {
 }
 
 
-
+.messageADD{
+  color: green;
+}
 
 
 .favorite-button {
@@ -245,25 +255,25 @@ h1 {
   height: 150px;
 }
 
-.favorites-list .pokemon-card2 .id {
+.favorites-list .pokemon-card2 .idfav {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.favorites-list .pokemon-card2 .name {
+.favorites-list .pokemon-card2 .namefav {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
   font-family: 'Press Start 2P', regular;
 }
 
-.favorites-list .pokemon-card2 .type {
+.favorites-list .pokemon-card2 .typefav {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.favorites-list .pokemon-card2 .type span {
+.favorites-list .pokemon-card2 .typefav span {
   display: inline-block;
   padding: 5px 10px;
   border-radius: 5px;
@@ -273,71 +283,19 @@ h1 {
 }
 
 
-.favorites-list .pokemon-card2 .typefav .grass {
-  background-color: #78c850;
-}
 
-.favorites-list .pokemon-card2 .typefav .fire {
-  background-color: #f08030;
-}
+.unfavorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url('favoritebtn.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
-.favorites-list .pokemon-card2 .typefav .water {
-  background-color: #6890f0;
 }
-
-.favorites-list .pokemon-card2 .type .electric {
-  background-color: #f8d030;
-}
-
-.favorites-list .pokemon-card2 .type .normal {
-  background-color: #a8a878;
-}
-
-.favorites-list .pokemon-card2 .type .fighting {
-  background-color: #c03028;
-}
-
-.favorites-list .pokemon-card2 .type .flying {
-  background-color: #a890f0;
-}
-
-.favorites-list .pokemon-card2 .type .poison {
-  background-color: #a040a0;
-}
-
-.favorites-list .pokemon-card2 .type .ground {
-  background-color: #e0c068;
-}
-
-.favorites-list .pokemon-card2 .type .rock {
-  background-color: #b8a038;
-}
-
-.favorites-list .pokemon-card2 .type .bug {
-  background-color: #a8b820;
-}
-
-.favorites-list .pokemon-card2 .type .ghost {
-  background-color: #705898;
-}
-
-.favorites-list .pokemon-card2 .type .steel {
-  background-color: #b8b8d0;
-}
-
-.favorites-list .pokemon-card2 .type .dragon {
-  background-color: #7038f8;
-}
-
-.favorites-list .pokemon-card2 .type .ice {
-  background-color: #98d8d8;
-}
-
-.favorites-list .pokemon-card2 .type .dark {
-  background-color: #705848;
-}
-
-.favorites-list .pokemon-card2 .type .fairy {
-  background-color: #ee99ac;
-}
-

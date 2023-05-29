@@ -18,13 +18,11 @@
     </div>
 
 
-    <div class="btnindex">
-        <button class="btn1">Liste des Favoris</button>
-    </div>
+ 
 
     <div class="error-message"></div>
 
-    
+
     <div id="pokemon-container" class="hidden">
         <div class="pokemon-card">
             <div class="sprite">
@@ -34,14 +32,17 @@
             <div class="name"></div>
             <div class="type"></div>
             <button class="favorite-button"></button>
+            <p class="messageADD"></p>
         </div>
     </div>
+    <div class="btnindex">
+        <button class="btn1">Liste des Favoris</button>
+    </div>
+    <div id="pokemonlist">
+    <p id="messagesuppr"></p>
+
+    </div>
     
-    <div id="pokemonlist"></div>
-
-    <p>Pikachu</p>
-<p>Butterfree</p>
-
 
 
     

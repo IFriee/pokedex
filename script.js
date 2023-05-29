@@ -70,20 +70,30 @@ $(document).ready(function() {
 
   // Fonction pour ajouter un Pokémon aux favoris
   $(document).on('click', '.favorite-button', function() {
-    //var pokemonList = $('#pokemonlist');
+    var pokemonCard = $(this).closest('.pokemon-card');
     var name = $('.name').text();
     var url = $('.sprite img').attr('src');
     var type = $('.type').text();
-
+  
     $.post('http://localhost/ifosup/Dev-SGBD/Dev-SGBD/pokedex/pokedex/Pokemonfav.php?store=1', { name: name, url: url, type: type })
       .done(function(result) {
-        //pokemonList.append(result);
-
+        pokemonCard.find('.favorite-button').hide();
+        pokemonCard.find('.messageADD').text('Pokemon ajouté');
       })
       .fail(function(err) {
         console.warn('Error:', err);
       });
   });
+  
+
+
+
+function doublon(){
+  
+}
+
+
+
 
 
 
@@ -136,14 +146,18 @@ $(document).ready(function() {
 
 $(document).on('click', '.unfavorite-button', function() {
   var pokemonCard = $(this).closest('.pokemon-card2');
-  var pokemonId = pokemonCard.find('.id').text();
+  var PokemonList = $(this).closest('#pokemonlist');
+  var pokemonId = pokemonCard.find('.idfav').text();
 
   $.post('http://localhost/ifosup/Dev-SGBD/Dev-SGBD/pokedex/pokedex/Pokemonfav.php?destroy=1',{id: pokemonId })
     .done(function(result) {
-      //pokemonList.append(result);
+      PokemonList.find('#messagesuppr').text('Pokemon supprimé');
       pokemonCard.remove();
+      
     })
     .fail(function(err) {
       console.warn('Error:', err);
     })
     });
+
+
