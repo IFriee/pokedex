@@ -13,14 +13,13 @@ $(document).ready(function() {
       url: 'https://pokeapi.co/api/v2/pokemon/' + pokemonName.toLowerCase(),
       method: 'GET',
       success: function(result) {
-        // Afficher les informations du Pokémon
+
         displayPokemonInfo(result);
       },
-      // En cas d'erreur de la requête
+   
       error: function(err) {
         console.warn('Error:', err);
         clearPokemonInfo();
-        // Afficher un message d'erreur
         displayErrorMessage("Tu viens d'inventer un nouveau pokemon ! Je rigole, tu t'es juste trompé #NULLOS");
       }
     });
@@ -102,25 +101,29 @@ function doublon(){
   // afficher liste favoris
   $(document).on('click', '.btn1', function() {
     var pokemonList = $('#pokemonlist');
-    
+    var nothinghere = $('#nothingfrere')
+  
     // Si la liste des favoris est déjà affichée, la cacher
     if (pokemonList.children().length > 0) {
       pokemonList.empty();
       return;
     }
-    
+  
     $.get('http://localhost/ifosup/Dev-SGBD/Dev-SGBD/pokedex/pokedex/Pokemonfav.php')
       .done(function(result) {
-        pokemonList.append(result);
-        var cssLink = $('<link rel="stylesheet" href="index.css">');
-        $('head').append(cssLink);
+        if (result.trim() === '') {
+          nothinghere.text("T'as rien capturé ??? Bouge toi un peu Sacha tu fais pitié "); 
+        } else {
+          pokemonList.append(result);
+          var cssLink = $('<link rel="stylesheet" href="index.css">');
+          $('head').append(cssLink);
+        }
       })
       .fail(function(err) {
         console.warn('Error:', err);
       });
   });
-   
-
+  
 
 /*
   $(document).on('click', '.unfavorite-button', function() {

@@ -76,7 +76,7 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  background-image: url('favoritebtn.png');
+  background-image: url('../favoritebtn.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -293,7 +293,7 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  background-image: url('favoritebtn.png');
+  background-image: url('../favoritebtn.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

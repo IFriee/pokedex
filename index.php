@@ -5,7 +5,7 @@
     <title>Pokékouille</title>
     <style>
     </style>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="views/index.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </head>
@@ -39,6 +39,7 @@
         <button class="btn1">Liste des Favoris</button>
     </div>
     <div id="pokemonlist">
+    <p id="nothingfrere"></p>
     <p id="messagesuppr"></p>
 
     </div>
